@@ -6,7 +6,6 @@ management:
 virtuele:
   processers : modelprocessor@virtuele.us
 spring:
-  application.name: service-users
   datasource:
     platform: mysql
     driver-class-name: com.mysql.cj.jdbc.Driver
