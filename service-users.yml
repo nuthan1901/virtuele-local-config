@@ -1,0 +1,35 @@
+management:
+  health:
+    livenessState.enabled: true
+    readinessState.enabled: true
+  endpoint.health.probes.enabled: true
+virtuele:
+  processers : modelprocessor@virtuele.us
+spring:
+  application.name: service-users
+  datasource:
+    platform: mysql
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/user_demo?autoReconnect=true&useSSL=false&createDatabaseIfNotExist=true&allowPublicKeyRetrieval=true
+    username: root
+    password: root@123
+    initialization-mode: always
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL8Dialect
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+      generate-ddl: true
+  jackson:
+    deserialization:
+      FAIL_ON_IGNORED_PROPERTIES: false
+    serialization:
+      INDENT_OUTPUT: false
+      WRITE_DATES_AS_TIMESTAMPS: false
+      WRITE_BIGDECIMAL_AS_PLAIN: true
+jwt:
+  secret : jwt.secret=^*#$#lkdfsdo9ojidsf90dnosn0444494fornoimmapgoop43204324nfmdkdfiodfdsfwernajiewr77983242ffsd
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka
